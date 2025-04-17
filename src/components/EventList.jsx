@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Event from './Event';
 
 const EventList = ({ events }) => {
@@ -10,5 +10,13 @@ const EventList = ({ events }) => {
 		</ul>
 	);
 };
+
+return (
+    <div className="App">
+      <CitySearch />
+      <NumberOfEvents />
+      <EventList events={events} />
+    </div>
+  );
 
 export default EventList;
