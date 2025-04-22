@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';*/
 import { loadFeature, defineFeature } from 'jest-cucumber';
 import { render, within, waitFor, fireEvent } from '@testing-library/react';
 import App from '../App';
