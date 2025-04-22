@@ -6,9 +6,11 @@ const NumberOfEvents = ({ currentNOE, setCurrentNOE, setErrorAlert }) => {
 
   const handleInputChanged = (event) => {
     const value = Number(event.target.value);
+    if (!isNaN(value) && value >= 0) {
     setNumber(value);
-    setCurrentNOE(value);
+    setCurrentNOE(parseInt(value, 10));
   }
+};
     return (
       <div id="number-of-events">
         <label htmlFor="number-of-events-input">Number of Events: </label>

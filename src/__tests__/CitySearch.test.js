@@ -1,15 +1,20 @@
 import React from 'react';
-import { render, within, waitFor } from '@testing-library/react';
+import { render, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import CitySearch from '../components/CitySearch';
 import App from '../App';
 import { extractLocations, getEvents } from '../api';
 
+
 describe('<CitySearch /> component', () => {
-  let CitySearchComponent;
-  beforeEach(() => {
-    CitySearchComponent = render(<CitySearch allLocations={[]} />);
-  });
+ let CitySearchComponent;
+ beforeEach(() => {
+   CitySearchComponent = render(<CitySearch
+     allLocations={[]}
+     setCurrentCity={() => { }}
+     setInfoAlert={() => { }}
+   />);
+ });
 
 
   test('renders text input', () => {
