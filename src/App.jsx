@@ -1,4 +1,4 @@
-/*import React from 'react';*/
+import React from 'react';
 import CitySearch from './components/CitySearch';
 import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
@@ -14,18 +14,19 @@ const App = () => {
   const [currentCity, setCurrentCity] = useState("See all cities");
 
 
-  useEffect(() => {
-    fetchData();
-  }, [currentCity]);
+	useEffect(() => {
+		fetchData();
+	}, [currentCity]);
 
-  const fetchData = async () => {
-    const allEvents = await getEvents();
-    const filteredEvents = currentCity === "See all cities" ?
-      allEvents :
-      allEvents.filter(event => event.location === currentCity)
-    setEvents(filteredEvents.slice(0, currentNOE));
-    setAllLocations(extractLocations(allEvents));
-  }
+	const fetchData = async () => {
+		const allEvents = await getEvents();
+		const filteredEvents =
+			currentCity === 'See all cities'
+				? allEvents
+				: allEvents.filter((event) => event.location === currentCity);
+		setEvents(filteredEvents.slice(0, currentNOE));
+		setAllLocations(extractLocations(allEvents));
+	};
 
   return (
     <div className="App">
