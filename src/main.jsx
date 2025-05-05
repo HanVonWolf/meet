@@ -6,6 +6,7 @@ import './index.css'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
 
+
 // atatus.config('25b5b32ecf1464992262f36fc023eb4').install();
 
 
