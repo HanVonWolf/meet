@@ -1,12 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
 .App {
-  text-align: center;
-  padding: 2% 5%;
+  /* text-align: center; /* Keep if you want text centered, but block elements will be centered by margin: auto */
+  padding: 20px; /* Use a fixed padding for consistency */
+  max-width: 960px; /* Set a maximum width for the content */
+  margin: 0 auto; /* Center the block element horizontally */
+  box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
-.App * {
+/* Remove the redundant box-sizing from all elements */
+/* .App * {
   box-sizing: border-box;
-}
+} */
 
 ul {
   padding: 0;
@@ -37,7 +42,7 @@ input[type="number"] {
 #city-search {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: auto; /* This centers the city-search div if it has a width */
   position: relative;
 }
 
@@ -71,7 +76,7 @@ input[type="number"] {
 .event {
   padding: 10px 10px 35px;
   margin-bottom: 10px;
-  text-align: left;
+  text-align: left; /* Keep text left-aligned within the event box */
   border: 1px solid #ccc;
   border-radius: 4px;
   position: relative;
@@ -96,14 +101,17 @@ input[type="number"] {
  }
 
  .charts-container {
-  width: 99%;
-  height: 400;
+  width: 100%; /* Use 100% to fill the parent (.App) width */
+  height: 400px; /* Added px unit */
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 20px; /* Add some space between charts */
+  margin-bottom: 20px; /* Add space below charts */
 }
 
 @media (max-width: 768px) {
   .charts-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stack charts on smaller screens */
+    height: auto; /* Allow height to adjust when stacked */
   }
 }
